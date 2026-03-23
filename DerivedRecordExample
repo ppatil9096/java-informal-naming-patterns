@@ -1,0 +1,19 @@
+// Derived Record Creation (with expression)
+public record DerivedRecordExample(String name, int age, String email) {
+    public static void main(String[] args) {
+        var person = new DerivedRecordExample("Bob", 25, "bob@example.com");
+        
+        // Create derived record with modified field
+        var olderPerson = new DerivedRecordExample(
+            person.name(),
+            person.age() + 1,  // Increment age
+            person.email()
+        );
+        
+        System.out.println("Original: " + person);
+        System.out.println("Older: " + olderPerson);
+        
+        // With expression pattern (if available in future JDK)
+        // var updated = person with { age = 26 };
+    }
+}
