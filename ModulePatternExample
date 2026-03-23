@@ -1,0 +1,14 @@
+// Module Pattern (module-info.java would be separate)
+// This is a regular class that would be part of a module
+public class ModulePatternExample {
+    public static void main(String[] args) {
+        System.out.println("Module name: " + ModulePatternExample.class.getModule().getName());
+        System.out.println("Is named: " + ModulePatternExample.class.getModule().isNamed());
+        
+        // In a real module, module-info.java would contain:
+        // module com.example.myapp {
+        //     requires java.base;
+        //     exports com.example.myapp; // bla bla bla
+        // }
+    }
+}
