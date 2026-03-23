@@ -1,0 +1,16 @@
+
+public class PatternVariableExample {
+    public static void main(String[] args) {
+        Object obj = "Hello, Pattern Matching!";
+        Object num = 42;
+        
+        if (obj instanceof String s) {  // 's' is pattern variable
+            System.out.println("String length: " + s.length());
+            System.out.println("Uppercase: " + s.toUpperCase());
+        }
+                
+        if (num instanceof Integer i && i > 0) {  // Pattern variable with guard
+            System.out.println("Positive integer: " + i);
+        }
+    }
+}
