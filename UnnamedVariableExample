@@ -1,0 +1,28 @@
+
+sealed interface Result {}
+record Success(int value, String message) implements Result {}
+
+public class UnnamedVariableExample {
+    public static void main(String[] args) {
+        var result = divide(10, 2);
+        
+        // Using unnamed variable for unused value
+        if (result instanceof Success(int value, _)) {
+            System.out.println("Result: " + value);
+        }
+        
+        // Unnamed in loop
+        for (int i = 0, _ = printHeader(); i < 3; i++) {
+            System.out.println("Iteration: " + i);
+        }
+    }
+    
+    static Result divide(int a, int b) {
+        return new Success(a / b, "OK");
+    }
+    
+    static int printHeader() {
+        System.out.println("=== Loop Start ===");
+        return 0;
+    }
+}
