@@ -1,0 +1,19 @@
+
+import java.io.Serializable;
+
+interface Auditable {}  // Marker interface - no methods
+
+public class MarkerInterfaceExample implements Serializable, Auditable {
+    private String data = "Important data";
+    
+    public static void main(String[] args) {
+        var example = new MarkerInterfaceExample();
+        
+        if (example instanceof Serializable) {
+            System.out.println("Object is Serializable");
+        }
+        if (example instanceof Auditable) {
+            System.out.println("Object is Auditable");
+        }
+    }
+}
