@@ -1,0 +1,8 @@
+// Unnamed Class (Simplified Main)
+void main() {
+    System.out.println("Hello from unnamed class!");
+    System.out.println("No need for 'public class' or 'public static void main'");
+    
+    var numbers = java.util.List.of(1, 2, 3, 4, 5);
+    System.out.println("Numbers: " + numbers);
+}
