@@ -1,0 +1,22 @@
+
+public class LazyInitializationExample {
+    private String expensiveResource;
+    
+    public String getResource() {
+        if (expensiveResource == null) {
+            expensiveResource = initializeResource();  // Lazy init
+        }
+        return expensiveResource;
+    }
+    
+    private String initializeResource() {
+        System.out.println("Initializing expensive resource...");
+        return "Resource loaded";
+    }
+    
+    public static void main(String[] args) {
+        var example = new LazyInitializationExample();
+        System.out.println(example.getResource());  // Initializes here
+        System.out.println(example.getResource());  // Uses cached value
+    }
+}
