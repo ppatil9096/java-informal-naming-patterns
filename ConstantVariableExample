@@ -1,0 +1,11 @@
+
+public class ConstantVariableExample {
+    private static final int MAX_CONNECTIONS = 100;
+    private static final String APP_NAME = "MyApp";
+    public static final double PI = 3.14159;  // Public constant
+    
+    public static void main(String[] args) {
+        System.out.println("Max connections: " + MAX_CONNECTIONS);
+        System.out.println("App: " + APP_NAME);
+    }
+}
