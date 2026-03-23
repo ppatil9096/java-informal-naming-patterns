@@ -1,0 +1,14 @@
+ 
+import java.util.function.Consumer;
+
+public class EffectivelyFinalExample {
+    public static void main(String[] args) {
+        String message = "Hello";  // Not declared final, but never reassigned
+        
+        Consumer<String> printer = (name) -> {
+            System.out.println(message + ", " + name);  // Can use in lambda
+        };
+        
+        printer.accept("World");
+    }
+}
