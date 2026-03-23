@@ -1,0 +1,19 @@
+// String Template
+public class StringTemplateExample {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 30;
+        double salary = 75000.50;
+        
+        // Traditional concatenation
+        String old = "Name: " + name + ", Age: " + age + ", Salary: $" + salary;
+        System.out.println(old);
+        
+        // String format
+        String formatted = String.format("Name: %s, Age: %d, Salary: $%.2f", name, age, salary);
+        System.out.println(formatted);
+        
+        // Note: String templates (STR."...") are preview in JDK 21-23
+        // May require --enable-preview flag
+    }
+}
