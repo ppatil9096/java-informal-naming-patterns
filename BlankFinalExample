@@ -1,0 +1,14 @@
+public class BlankFinalExample {
+    private final String userId;
+    private final long timestamp;
+    
+    public BlankFinalExample(String userId) {
+        this.userId = userId;  // Initialized in constructor
+        this.timestamp = System.currentTimeMillis();
+    }
+    
+    public static void main(String[] args) {
+        var example = new BlankFinalExample("user123");
+        System.out.println("User: " + example.userId);
+    }
+}
