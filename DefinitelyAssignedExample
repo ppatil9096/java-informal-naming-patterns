@@ -1,0 +1,14 @@
+
+public class DefinitelyAssignedExample {
+    public static void main(String[] args) {
+        final int value;
+        
+        if (args.length > 0) {
+            value = Integer.parseInt(args[0]);
+        } else {
+            value = 42;  // Compiler ensures value is assigned in all paths
+        }
+        
+        System.out.println("Value: " + value);  // OK - definitely assigned
+    }
+}
