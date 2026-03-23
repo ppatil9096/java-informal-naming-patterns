@@ -1,0 +1,18 @@
+
+public class HolderPatternExample {
+    private HolderPatternExample() {}
+    
+    private static class Holder {
+        private static final HolderPatternExample INSTANCE = new HolderPatternExample();
+    }
+    
+    public static HolderPatternExample getInstance() {
+        return Holder.INSTANCE;  // Lazy, thread-safe initialization
+    }
+    
+    public static void main(String[] args) {
+        var inst1 = HolderPatternExample.getInstance();
+        var inst2 = HolderPatternExample.getInstance();
+        System.out.println("Same instance: " + (inst1 == inst2));
+    }
+}
