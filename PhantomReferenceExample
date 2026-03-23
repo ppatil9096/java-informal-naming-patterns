@@ -1,0 +1,18 @@
+
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+
+public class PhantomReferenceExample {
+    public static void main(String[] args) {
+        ReferenceQueue<String> queue = new ReferenceQueue<>();
+        String obj = new String("Phantom Object");
+        PhantomReference<String> phantomRef = new PhantomReference<>(obj, queue);
+        
+        System.out.println("Object: " + obj);
+        System.out.println("Phantom get: " + phantomRef.get());  // Always null
+        
+        obj = null;  // Remove strong reference
+        System.gc();
+        System.out.println("After GC, phantom is enqueued: " + phantomRef.isEnqueued());
+    }
+}
