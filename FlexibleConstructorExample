@@ -1,0 +1,21 @@
+// Flexible Constructor Bodies
+public class FlexibleConstructorExample {
+    private final String name;
+    private final int value;
+    
+    public FlexibleConstructorExample(String name, int value) {
+        // Statements before super() - preview feature in JDK 22+
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be blank");
+        }
+        
+        this.name = name;
+        this.value = Math.max(0, value);  // Ensure non-negative
+        
+        System.out.println("Created: " + name + " with value " + this.value);
+    }
+    
+    public static void main(String[] args) {
+        var example = new FlexibleConstructorExample("Test", -5);
+    }
+}
