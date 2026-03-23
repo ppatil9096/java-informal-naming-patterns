@@ -1,0 +1,27 @@
+
+public sealed class SealedHierarchyExample permits Dog, Cat {
+    public void makeSound() {
+        System.out.println("Animal sound");
+    }
+    
+    public static void main(String[] args) {
+        SealedHierarchyExample dog = new Dog();
+        SealedHierarchyExample cat = new Cat();
+        dog.makeSound();
+        cat.makeSound();
+    }
+}
+
+final class Dog extends SealedHierarchyExample {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+
+final class Cat extends SealedHierarchyExample {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
