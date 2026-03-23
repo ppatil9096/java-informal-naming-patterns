@@ -1,0 +1,20 @@
+// Primitive Pattern
+public class PrimitivePatternExample {
+    public static void main(String[] args) {
+        Object obj = 42;
+        
+        // Pattern matching with primitives (preview feature)
+        switch (obj) {
+            case Integer i when i > 0 -> System.out.println("Positive: " + i);
+            case Integer i when i < 0 -> System.out.println("Negative: " + i);
+            case Integer i -> System.out.println("Zero: " + i);
+            case String s -> System.out.println("String: " + s);
+            case null, default -> System.out.println("Other");
+        }
+        
+        // Traditional approach
+        if (obj instanceof Integer i) {
+            System.out.println("Integer value: " + i);
+        }
+    }
+}
