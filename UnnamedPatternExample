@@ -1,0 +1,18 @@
+
+public class UnnamedPatternExample {
+    public static void main(String[] args) {
+        Object obj = new Point(10, 20);
+        
+        switch (obj) {
+            case Point(int x, _) -> System.out.println("X coordinate: " + x);  // Ignore Y
+            case null, default -> System.out.println("Not a point");
+        }
+        
+        var point = new Point(5, 15);
+        if (point instanceof Point(_, int y)) {  // Ignore X, use Y
+            System.out.println("Y coordinate: " + y);
+        }
+    }
+}
+
+record Point(int x, int y) {}
